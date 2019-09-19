@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="8.1.0" />
+    <PackageReference Include="Elastic.Apm.NetCoreAll" Version="1.0.1" />
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.AspNetCore.StaticFiles" Version="2.2.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.3" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="4.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\shared\Sample.Shared.Utilities\Sample.Shared.Utilities.csproj" />
+    <ProjectReference Include="..\Sample.Demo.BusinessService\Sample.Demo.BusinessService.csproj" />
+    <ProjectReference Include="..\Sample.Demo.Contracts\Sample.Demo.Contracts.csproj" />
+    <ProjectReference Include="..\Sample.Demo.DataService\Sample.Demo.DataService.csproj" />
+    <ProjectReference Include="..\Sample.Demo.Data\Sample.Demo.Data.csproj" />
+  </ItemGroup>
+
+</Project>

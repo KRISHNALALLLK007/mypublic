@@ -1,0 +1,27 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/shared/Sample.Shared.Utilities/bin
+/shared/Sample.Shared.Utilities/obj
+/src/Sample.Demo.BusinessService/bin
+/.vs/Sample.Demo.Web/DesignTimeBuild
+/.vs/Sample.Demo.Web/v16/Server/sqlite3
+/.vs/Sample.Demo.Web/v16
+/Sample.Demo.Web.Test/bin/Debug/netcoreapp2.2
+/Sample.Demo.Web.Test
+/src/Sample.Demo.BusinessService/obj/Debug/netcoreapp2.2
+/src/Sample.Demo.BusinessService/obj/release/netcoreapp2.2
+/src/Sample.Demo.BusinessService/obj
+/src/Sample.Demo.Contracts/bin
+/src/Sample.Demo.Contracts/obj/Debug/netcoreapp2.2
+/src/Sample.Demo.Contracts/obj/release/netcoreapp2.2
+/src/Sample.Demo.Data/bin
+/src/Sample.Demo.Data/obj/Debug/netcoreapp2.2
+/src/Sample.Demo.Contracts/obj
+/src/Sample.Demo.Data/obj
+/src/Sample.Demo.Web/bin/Debug/netcoreapp2.2
+/src/Sample.Demo.Web/Logs
+/src/Sample.Demo.Web/obj
+/src/Sample.Demo.DataService/bin
+/src/Sample.Demo.DataService/obj

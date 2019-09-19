@@ -1,0 +1,34 @@
+{
+  "Serilog": {
+    "Using": [ "Serilog.Sinks.Console" ],
+    "MinimumLevel": {
+      "Default": "Information",
+      "Override": {
+        "Microsoft": "Warning",
+        "System": "Error"
+      }
+    },
+    "WriteTo": [
+      { "Name": "Console" },
+      {
+        "Name": "File",
+        "Args": {
+          "path": "Logs/log.txt",
+          "rollingInterval": "Day",
+          "rollOnFileSizeLimit": true,
+          "retainedFileCountLimit": 5,
+          "outputTemplate": "{Timestamp:yyyy-MM-dd HH:mm:ss.fff zzz} [{Level}] {Message}{NewLine}{Exception} "
+        }
+      }
+    ],
+    "ElasticSearchUrl": "http://elastic:PleaseChangeMe@localhost:9200",
+    "IndexFormat": "localapilog-{0:yyyy.MM.dd}", // devapilog,qcapilog, uatapilog, prodapilog
+    "RequestEventLogName": "localcourseeventlog-", // devcourseeventlog,qccourseeventlog,uatcourseeventlog,prodcourseeventlog
+    "ApplicationName": "WebAPI" // Mobile,Scheduler,Twilio, MicroService
+  },
+  "ElasticApm": {
+    "SecretToken": "",
+    "ServerUrls": "http://localhost:8201", //Set custom APM Server URL (default: http://localhost:8200)
+    "ServiceName": "MyApp" //allowed characters: a-z, A-Z, 0-9, -, _, and space. Default is the entry assembly of the application
+  }
+}
