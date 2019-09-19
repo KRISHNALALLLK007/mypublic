@@ -18,25 +18,46 @@ services:
                 soft: -1
                 hard: -1
         ports:
-        - "9200:9200"
+            - "9200:9200"
         expose:
-        - "9200"
+            - "9200"
     kibana:
         image: docker.elastic.co/kibana/kibana:7.3.2
         container_name: kibana
         hostname: kibana
         restart: always
         environment:
-        - SERVER_NAME=kibana.localhost
-        - ELASTICSEARCH_HOSTS=http://elasticsearch:9200
-        - XPACK_SECURITY_ENABLED=true
-        - ELASTICSEARCH_USERNAME=elastic
-        - ELASTICSEARCH_PASSWORD=PleaseChangeMe
+            - SERVER_NAME=kibana.localhost
+            - ELASTICSEARCH_HOSTS=http://elasticsearch:9200
+            - XPACK_SECURITY_ENABLED=true
+            - ELASTICSEARCH_USERNAME=elastic
+            - ELASTICSEARCH_PASSWORD=PleaseChangeMe
         ports:
-        - "5601:5601"
+            - "5601:5601"
         expose:
-        - "5601"
+            - "5601"
         links:
-        - elasticsearch
+            - elasticsearch
         depends_on:
-        - elasticsearch
+            - elasticsearch
+    apm:
+        image: docker.elastic.co/apm/apm-server:7.3.2
+        environment:
+            - output.elasticsearch.enabled=true
+            - output.elasticsearch.hosts=http://elasticsearch:9200
+        command: [
+        "apm-server", 
+        "-e", 
+        "-E", "output.elasticsearch.username=elastic", 
+        "-E", "output.elasticsearch.password=PleaseChangeMe", 
+        ]
+        ports:
+            - "8200:8200"
+        expose:
+            - "8200"
+        links:
+            - elasticsearch
+        depends_on:
+            - elasticsearch
+
+   
