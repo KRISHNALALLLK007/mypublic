@@ -7,6 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Include="wwwroot\images\1.PNG" />
+    <None Include="wwwroot\js\elastic-apm-rum.umd.min.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="AutoMapper" Version="8.1.0" />
     <PackageReference Include="Elastic.Apm.NetCoreAll" Version="1.0.1" />
     <PackageReference Include="Microsoft.AspNetCore.App" />

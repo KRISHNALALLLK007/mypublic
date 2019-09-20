@@ -64,6 +64,5 @@ namespace Sample.Demo.Web.Controllers
         {
             throw new Exception();
         }
-
     }
 }

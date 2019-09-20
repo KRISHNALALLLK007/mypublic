@@ -28,7 +28,8 @@
   },
   "ElasticApm": {
     "SecretToken": "",
+    //"LogLevel": "Error",
     "ServerUrls": "http://localhost:8201", //Set custom APM Server URL (default: http://localhost:8200)
-    "ServiceName": "MyApp" //allowed characters: a-z, A-Z, 0-9, -, _, and space. Default is the entry assembly of the application
+    "ServiceName": "WebAPI" //allowed characters: a-z, A-Z, 0-9, -, _, and space. Default is the entry assembly of the application
   }
 }
