@@ -63,10 +63,6 @@ namespace Sample.Demo.Web
              .AllowAnyHeader()
              .AllowCredentials());
             app.UseAllElasticApm(Configuration);
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-            }
             // UseAuthentication adds the authentication middleware to the pipeline so authentication will be performed automatically on every call into the host.
             app.UseAuthentication();
             app.UseMvc();
