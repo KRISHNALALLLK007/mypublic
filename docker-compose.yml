@@ -50,6 +50,15 @@ services:
         "-e", 
         "-E", "output.elasticsearch.username=elastic", 
         "-E", "output.elasticsearch.password=PleaseChangeMe", 
+        "-E", "apm-server.rum.enabled=true", 
+        "-E", "apm-server.rum.event_rate.limit=300", 
+        "-E", "apm-server.rum.event_rate.lru_size=1000", 
+        "-E", "apm-server.rum.allow_origins=['*']", 
+        "-E", "apm-server.rum.library_pattern=node_modules|bower_components|~", 
+        "-E", "apm-server.rum.exclude_from_grouping=^/webpack", 
+        "-E", "apm-server.rum.source_mapping.enabled=true", 
+        "-E", "apm-server.rum.source_mapping.cache.expiration=5m", 
+        "-E", "apm-server.rum.source_mapping.index_pattern=apm-*-sourcemap*"
         ]
         ports:
             - "8200:8200"
